@@ -7,10 +7,9 @@
                 <h2>Title: {{ $post->title }}</h2>
                 <p>Content: {{ $post->content }}</p>
                 <div>
-                    <a href="/posts/{{ $post->id }}">Show</a>
-                    <a href="/posts/{{ $post->id }}/edit">Edit</a>
-                    <a href="/posts/{{ $post->id }}/destroy">Delete</a>
-                    <form action="/posts/{{ $post->id }}/destroy" method="post">
+                    <a href="{{ route('posts.show', $post) }}">Show</a>
+                    <a href="{{route('posts.edit', $post) }}">Edit</a>
+                    <form action="{{route('posts.destroy', $post) }}" method="post">
                         @csrf
                         @method('DELETE')
                         <button>Delete</button>
