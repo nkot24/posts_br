@@ -13,7 +13,7 @@ class PostController extends Controller
     public function index()
     {
         $posts = Post::all();
-        return view('posts.index');
+        return view('posts.index')->with(['posts' => $posts]);
     }
 
     /**
@@ -42,8 +42,9 @@ class PostController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show()
+    public function show($id)
     {
+        $post = Post::find($id);
         return view('posts.show', ['post' => $post]);
     }
     

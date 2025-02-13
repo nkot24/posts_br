@@ -1,8 +1,11 @@
 <x-app-layout>
     <h1>Edit post</h1>
 
-    <form action="" method="post">
+    <form action="/posts/{{ $post->id }}/update" method="post">
         @csrf
+        @method('PUT')
+        
+        
 
         <label for="title">Title: </label>
         <input type="text" id="title" name="title" value="{{ $post->title }}">
