@@ -1,5 +1,8 @@
 <x-app-layout>
     <h1>Create post</h1>
+    @foreach ($errors->all() as $error)
+    <li>{{ $error }}</li>
+    @endforeach
 
     <form action="/posts" method="post">
         @csrf
